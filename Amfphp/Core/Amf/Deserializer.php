@@ -743,8 +743,7 @@ class Amfphp_Core_Amf_Deserializer implements Amfphp_Core_Common_IDeserializer {
     protected function readBuffer($len) {
         $data = '';
         for ($i = 0; $i < $len; $i++) {
-            $data .= $this->rawData
-                    {$i + $this->currentByte};
+            $data .= $this->rawData[$i + $this->currentByte];
         }
         $this->currentByte += $len;
         return $data;
